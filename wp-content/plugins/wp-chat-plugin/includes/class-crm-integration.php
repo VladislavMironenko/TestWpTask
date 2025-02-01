@@ -18,12 +18,6 @@ class CRM_Integration {
             )
         ));
         
-        // Check for errors
-        // if (is_wp_error($response)) {
-        //     error_log('CRM Deal Creation Error: ' . $response->get_error_message());
-        //     return false;
-        // }
-        
         // Decode the response
         $body = wp_remote_retrieve_body($response);
         $result = json_decode($body, true);

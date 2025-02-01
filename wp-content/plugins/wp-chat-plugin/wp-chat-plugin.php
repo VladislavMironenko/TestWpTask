@@ -106,4 +106,11 @@ function wp_chat_plugin_get_session_data() {
     wp_die();
 }
 
+function wp_chat_plugin_shortcode() {
+    ob_start();
+    include plugin_dir_path(__FILE__) . 'templates/chat-window.php';
+    return ob_get_clean();
+}
+add_shortcode('wp_chat', 'wp_chat_plugin_shortcode');
+
 
